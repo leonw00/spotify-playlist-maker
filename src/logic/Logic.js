@@ -29,7 +29,14 @@ async function searchTrack(e) {
 
   let localTrack = arr[Math.floor(Math.random() * arr.length)];
 
-  return {"image": localTrack.album.images[0].url, "name": localTrack.name};
+  // set the artists as there may be more than 1
+  let artists = localTrack.artists.map(artist => artist.name);
+
+  return {
+    image: localTrack.album.images[0].url,
+    title: localTrack.name,
+    artists: artists,
+  };
 }
 
 export async function generateTrackList(target) {

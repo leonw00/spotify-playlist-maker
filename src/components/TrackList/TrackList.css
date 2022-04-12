@@ -5,6 +5,6 @@
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    background-color: #1a1a1ad9;
+    background-color: rgba(0, 0, 0, 0.899);
     overflow-y: auto;
 }

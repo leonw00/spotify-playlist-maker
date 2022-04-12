@@ -5,9 +5,18 @@ function TrackList(props) {
   return (
     <div className="track-list-block">
       {props.tracks
-        ? props.tracks.map((track) => (
-            <TrackNode image={track.image} title={track.name} />
-          ))
+        ? props.tracks.map((track) => {
+            let artists = track.artists.reduce((prev, curr, index, arr) => {
+              return `${prev}${curr}${index !== arr.length - 1 ? ',' : ''}`;
+            }, "");
+            return (
+              <TrackNode
+                image={track.image}
+                title={track.title}
+                artist={artists}
+              />
+            );
+          })
         : ""}
     </div>
   );
