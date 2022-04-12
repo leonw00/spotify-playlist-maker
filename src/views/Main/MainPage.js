@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { RunButton, TextAreaButton } from "../../components/Buttons/Button";
 import TrackList from "../../components/TrackList/TrackList";
 import { generateTrackList } from "../../logic/Logic";
@@ -35,13 +35,9 @@ function MainPage() {
             <RunButton
               name="Generate Playlist"
               onClick={async () => {
-                let trackList = await generateTrackList(target);
-                console.log([...trackList]);
-                setTracks([trackList[0]]);
-                // trackList.map((newTrack) => {
-                //   console.log(newTrack);
-                //   setTracks([...tracks, newTrack.name]);
-                // });
+                var trackList = await generateTrackList(target);
+                
+                setTracks(trackList);
               }}
             />
           </div>
