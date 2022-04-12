@@ -29,7 +29,7 @@ async function searchTrack(e) {
 
   let localTrack = arr[Math.floor(Math.random() * arr.length)];
 
-  return {"image": localTrack.album.images[0], "name": localTrack.name};
+  return {"image": localTrack.album.images[0].url, "name": localTrack.name};
 }
 
 export async function generateTrackList(target) {
