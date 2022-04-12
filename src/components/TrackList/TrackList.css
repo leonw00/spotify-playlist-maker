@@ -1,0 +1,10 @@
+.track-list-block{
+    padding-top: 30px;
+    width: 350px;
+    height: 600px;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1ad9;
+    overflow-y: auto;
+}

@@ -1,0 +1,45 @@
+.button {
+  padding: 16px 32px;
+  text-align: center;
+  transition-duration: 0.4s;
+  cursor: pointer;
+  color: black;
+  border: 2px solid #555555;
+  background-color: transparent;
+}
+
+.button:hover {
+  background-color: #555555;
+  color: white;
+}
+
+
+.header-button{
+  background-color: rgba(255, 255, 255, 0.386);
+  color: rgba(0, 0, 0, 0.879);
+  padding: 8px 18px;
+  font-size: 1rem;
+  border-radius: 25px;
+  cursor: pointer;
+  border: none;
+  transition-duration: 0.3s;
+}
+
+
+.header-button:hover{
+  background-color: black;
+  color: yellow;
+}
+
+.textarea-button{
+  margin: 0;
+  padding: 10px 8px;
+  width: 130px;
+  font-size: 0.9rem;
+  text-align: center;
+  cursor: pointer;
+  color: rgba(74, 73, 73, 0.68);
+  border-radius: 5px;
+  border: 1px solid rgba(52, 51, 51, 0.756);
+  background-color: transparent;
+}
