@@ -1,10 +1,10 @@
 import "./TrackNode.css";
 
-function TrackNode(props) {
+export function TrackNode(props) {
   return (
     <div className="track-node-block">
       <div className="node-image-block">
-          {props.image ? <img src={props.image} alt="/" /> : <div className="blackbox"/>}
+          {props.image ? <img src={props.image} alt="/" /> : <div className="image-placeholder"/>}
       </div>
       <div className="node-text-block">
         <div className="node-title">{props.title}</div>
@@ -14,4 +14,17 @@ function TrackNode(props) {
   );
 }
 
-export default TrackNode;
+export function PlaceholderNode(){
+  console.log("TETTET");
+  return (
+    <div className="track-node-block">
+      <div className="node-image-block">
+          <div className="image-placeholder shine"/>
+      </div>
+      <div className="node-text-block">
+        <div className="node-title title-placeholder shine"/>
+        <div className="node-desc desc-placeholder shine"/>
+      </div>
+    </div>
+  );
+}
