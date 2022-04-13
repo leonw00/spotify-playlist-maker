@@ -8,10 +8,10 @@ const placeholder = () => {
 function TrackList(props) {
   return (
     <div className="track-list-block">
-      {props.tracks > 0 ? (
+      {props.tracks.length > 0 ? (
         props.tracks.map((track) => {
           let artists = track.artists.reduce((prev, curr, index, arr) => {
-            return `${prev}${curr}${index !== arr.length - 1 ? "," : ""}`;
+            return `${prev}${curr}${index !== arr.length - 1 ? ", " : ""}`;
           }, "");
           return (
             <TrackNode
