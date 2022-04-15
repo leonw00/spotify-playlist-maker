@@ -1,9 +1,5 @@
 import "./TrackList.css";
-import { PlaceholderNode, TrackNode } from "./TrackNode";
-
-const placeholder = () => {
-  return [<PlaceholderNode />, <PlaceholderNode />, <PlaceholderNode />];
-};
+import { TrackNode } from "./TrackNode";
 
 function TrackList(props) {
   return (
