@@ -1,6 +1,6 @@
 import axios from "axios";
 
-async function searchTrack(e) {
+export async function searchTrack(e) {
   let arr = [];
   var iteration = 0;
   var limit = 50;
