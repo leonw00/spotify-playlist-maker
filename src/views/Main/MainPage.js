@@ -5,6 +5,7 @@ import { generateTrackList } from "../../logic/Logic";
 import { getRandomText } from "../../logic/Others";
 import Header from "../Header/Header";
 import "./MainPage.css";
+import ArrowImage from "../../assets/right-arrow.png";
 
 function MainPage() {
   const [target, setTarget] = useState("");
@@ -56,6 +57,10 @@ function MainPage() {
               }}
             />
           </div>
+        </div>
+
+        <div className="image-area">
+          <img className="arrow-image" src={ArrowImage} />
         </div>
 
         <div className="display-block">
