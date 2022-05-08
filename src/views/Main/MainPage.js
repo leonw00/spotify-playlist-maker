@@ -94,22 +94,28 @@ function MainPage() {
         </div>
 
         <div className="display-block">
-          <TrackList tracks={tracks} />
-          {toggleProgress ? (
-            <div className="circular-progress-block">
-              <CircularProgressbar
-                value={progress}
-                maxValue={100}
-                text={`${progress}%`}
-                styles={buildStyles({
-                  textColor: "grey",
-                  pathColor: "orange",
-                })}
-              />
-            </div>
-          ) : (
-            ""
-          )}
+          <div className="display-playlist">
+            <TrackList tracks={tracks} />
+            {toggleProgress ? (
+              <div className="circular-progress-block">
+                <CircularProgressbar
+                  value={progress}
+                  maxValue={100}
+                  text={`${progress}%`}
+                  styles={buildStyles({
+                    textColor: "grey",
+                    pathColor: "orange",
+                  })}
+                />
+              </div>
+            ) : (
+              ""
+            )}
+          </div>
+
+          <div className="sidebar">
+            <i class="fa fa-solid fa-share"></i>
+          </div>
         </div>
       </div>
     </div>
