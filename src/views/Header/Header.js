@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { HeaderButton } from "../../components/Buttons/Button";
 import { authenticate, logout, storeToken } from "../../logic/Auth";
 import "./Header.css";
+import bmc from "../../assets/bmc.png";
 
 function Header() {
   const [auth, setAuth] = useState("");
@@ -23,7 +24,9 @@ function Header() {
       <div className="header-logo">Spotifyed</div>
 
       <div className="header-list">
-        <div className="header-list-content">Buy me a coffee</div>
+        <div className="header-list-content">
+          <img className="bmc-image" src={bmc} alt="arrow" />
+        </div>
         <div className="header-list-content">
           {auth ? (
             <HeaderButton
