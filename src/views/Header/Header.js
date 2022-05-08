@@ -20,11 +20,10 @@ function Header() {
 
   return (
     <div className="header-block">
-      <div className="header-logo">spotted</div>
+      <div className="header-logo">Spotifyed</div>
 
       <div className="header-list">
-        <div className="header-list-content">home</div>
-        <div className="header-list-content">home</div>
+        <div className="header-list-content">Buy me a coffee</div>
         <div className="header-list-content">
           {auth ? (
             <HeaderButton
