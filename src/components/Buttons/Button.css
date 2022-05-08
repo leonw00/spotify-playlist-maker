@@ -1,16 +1,20 @@
-.button {
-  padding: 16px 32px;
+.run-button {
+  padding: 14px 24px;
   text-align: center;
   transition-duration: 0.4s;
   cursor: pointer;
   color: black;
-  border: 2px solid #555555;
-  background-color: transparent;
+  border: 1px solid rgb(129, 129, 129);
+  background-color: rgba(201, 195, 195, 0.594);
+  border-radius: 5px;
+  font-size: 0.9rem;
+  color: black;
 }
 
-.button:hover {
-  background-color: #555555;
-  color: white;
+.run-button:hover {
+  border: 1px solid orange;
+  background-color: orange;
+  color: rgb(233, 233, 233);
 }
 
 

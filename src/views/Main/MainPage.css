@@ -43,7 +43,8 @@
 }
 
 .word-count{
-    font-size: 1.2rem;
+    font-size: 1rem;
+    margin-left: 10px;
 }
 
 .text-area-button-block{

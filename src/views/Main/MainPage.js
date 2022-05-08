@@ -44,6 +44,9 @@ function MainPage() {
     let trackList = [];
     let progressPercentage = 0;
 
+    // reset the tracklist
+    setTracks([]);
+
     // show the progress bar
     setToggleProgress(true);
 
@@ -78,7 +81,7 @@ function MainPage() {
             placeholder="Anything you type will be converted into a spotify playlist."
           ></textarea>
           <div className="button-block">
-            <div className="word-count">{wordCount} / 250</div>
+            <div className="word-count">{wordCount} / 250 Words</div>
             <RunButton
               name="Generate Playlist"
               onClick={() => generateTrackList(target)}

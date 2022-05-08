@@ -2,7 +2,7 @@ import "./Button.css";
 
 export function RunButton(props) {
   return (
-    <button className="button" onClick={props.onClick}>
+    <button className="run-button" onClick={props.onClick}>
       {props.name}
     </button>
   );
