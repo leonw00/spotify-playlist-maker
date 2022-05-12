@@ -39,7 +39,7 @@ export async function searchTrack(e) {
   };
 }
 
-// export async function createEmtpyPlaylist(userId, name) {
+// export async function createEmptyPlaylist(userId, name, token) {
 //   // request data object
 //   const content = {
 //     name: name,

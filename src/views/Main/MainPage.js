@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { RunButton, TextAreaButton } from "../../components/Buttons/Button";
 import TrackList from "../../components/TrackList/TrackList";
 import { searchTrack } from "../../logic/Logic";
@@ -8,6 +8,7 @@ import "./MainPage.css";
 import ArrowImage from "../../assets/right-arrow.png";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
+import { authenticate, getToken, storeToken } from "../../logic/Auth";
 
 function MainPage() {
   const [target, setTarget] = useState("");
@@ -16,6 +17,22 @@ function MainPage() {
   const [toggleProgress, setToggleProgress] = useState(false);
   const [finish, setFinish] = useState(false);
   const [wordCount, setWordCount] = useState(0);
+  const [auth, setAuth] = useState("");
+
+
+  useEffect(() => {
+    // check logged in
+    const hash = window.location.hash;
+    let token = getToken();
+
+    if (!token && hash) {
+      token = storeToken();
+    }
+
+    setAuth(token);
+
+  }, []);
+
 
   const generateRandomText = () => {
     let randomText = getRandomText();
@@ -101,8 +118,8 @@ function MainPage() {
           <div className="button-block">
             <div className="word-count">{wordCount} / 250 Words</div>
             <RunButton
-              name="Generate Playlist"
-              onClick={() => generateTrackList(target)}
+              name={auth ? "Generate Playlist" : "Login to Spotify"}
+              onClick={auth ? () => generateTrackList(target) : authenticate}
             />
           </div>
         </div>
