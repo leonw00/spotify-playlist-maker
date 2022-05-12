@@ -73,6 +73,17 @@ function MainPage() {
     setTracks(trackList);
   };
 
+  const resetTracklist = () => {
+    // reset the tracklist
+    setTracks([]);
+
+    // reset the finist state
+    setFinish(false);
+
+    // reset the progress percentage to be zero
+    setProgress(0);
+  };
+
   return (
     <div className="main-page">
       <Header />
@@ -123,8 +134,8 @@ function MainPage() {
           {finish ? (
             <div className="sidebar">
               <i class="fa fa-solid fa-share"></i>
-              <i class="fa fa-solid fa-plus"></i>
-              <i class="fa fa-solid fa-trash"></i>
+              <i class="fa fa-solid fa-save"></i>
+              <i class="fa fa-solid fa-trash" onClick={resetTracklist}></i>
             </div>
           ) : (
             <div className="sidebar"></div>
