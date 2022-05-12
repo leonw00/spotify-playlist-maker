@@ -30,7 +30,7 @@ export async function searchTrack(e) {
   let localTrack = arr[Math.floor(Math.random() * arr.length)];
 
   // set the artists as there may be more than 1
-  let artists = localTrack.artists.map(artist => artist.name);
+  let artists = localTrack.artists.map((artist) => artist.name);
 
   return {
     image: localTrack.album.images[0].url,
@@ -39,15 +39,24 @@ export async function searchTrack(e) {
   };
 }
 
-export async function generateTrackList(target) {
-  // parse the search key
-  let wordList = target.split(/[ ,.]+/).filter((item) => item);
+// export async function createEmtpyPlaylist(userId, name) {
+//   // request data object
+//   const content = {
+//     name: name,
+//   };
 
-  let trackList = [];
+//   // set the headers
+//   const config = {
+//     headers: {
+//       "Content-Type": "application/json",
+//       Authorization: `Bearer ${token}`,
+//     },
+//   };
 
-  for (let i = 0; i < wordList.length; i++) {
-    trackList.push(await searchTrack(wordList[i]));
-  }
-
-  return trackList;
-}
+//   // create the playlist
+//   const { data } = await axios.post(
+//     `https://api.spotify.com/v1/users/${userId}/playlists`,
+//     JSON.stringify(content),
+//     config
+//   );
+// }
