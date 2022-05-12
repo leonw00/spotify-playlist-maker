@@ -14,6 +14,7 @@ function MainPage() {
   const [tracks, setTracks] = useState([]);
   const [progress, setProgress] = useState(0);
   const [toggleProgress, setToggleProgress] = useState(false);
+  const [finish, setFinish] = useState(false);
   const [wordCount, setWordCount] = useState(0);
 
   const generateRandomText = () => {
@@ -47,6 +48,9 @@ function MainPage() {
     // reset the tracklist
     setTracks([]);
 
+    // reset the finist state
+    setFinish(false);
+
     // show the progress bar
     setToggleProgress(true);
 
@@ -62,6 +66,9 @@ function MainPage() {
 
     // reset the progress percentage to be zero
     setProgress(0);
+
+    // set the finish state to be true
+    setFinish(true);
 
     setTracks(trackList);
   };
@@ -113,9 +120,15 @@ function MainPage() {
             )}
           </div>
 
-          <div className="sidebar">
-            <i class="fa fa-solid fa-share"></i>
-          </div>
+          {finish ? (
+            <div className="sidebar">
+              <i class="fa fa-solid fa-share"></i>
+              <i class="fa fa-solid fa-plus"></i>
+              <i class="fa fa-solid fa-trash"></i>
+            </div>
+          ) : (
+            <div className="sidebar"></div>
+          )}
         </div>
       </div>
     </div>
