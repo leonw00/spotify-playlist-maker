@@ -1,0 +1,32 @@
+.name-container-modal {
+  align-self: center;
+  position: fixed;
+  top: 200px;
+  background-color: rgba(26, 26, 26, 0.967);
+  width: 450px;
+  height: 200px;
+  border-radius: 5px;
+  border: 3px solid orange;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: 0px 35px;
+}
+
+.name-container-modal > h1{
+    font-size: 1.5rem;
+    margin-top: 40px;
+    margin-bottom: 30px;
+    color: orange;
+}
+
+.name-container-modal > input{
+    box-sizing: border-box;
+    width: 100%;
+    border: 3px solid white;
+    border-radius: 3px;
+    background: transparent;
+    font-size: 1.2rem;
+    color: white;
+    padding: 3px 5px;
+}

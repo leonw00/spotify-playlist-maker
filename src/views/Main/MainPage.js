@@ -9,6 +9,7 @@ import ArrowImage from "../../assets/right-arrow.png";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { authenticate, getToken, storeToken } from "../../logic/Auth";
+import NameModal from "../../components/Popup/NameModal";
 
 function MainPage() {
   const [target, setTarget] = useState("");
@@ -18,7 +19,6 @@ function MainPage() {
   const [finish, setFinish] = useState(false);
   const [wordCount, setWordCount] = useState(0);
   const [auth, setAuth] = useState("");
-
 
   useEffect(() => {
     // check logged in
@@ -30,9 +30,7 @@ function MainPage() {
     }
 
     setAuth(token);
-
   }, []);
-
 
   const generateRandomText = () => {
     let randomText = getRandomText();
@@ -159,6 +157,8 @@ function MainPage() {
           )}
         </div>
       </div>
+
+      <NameModal />
     </div>
   );
 }

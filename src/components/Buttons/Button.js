@@ -23,3 +23,12 @@ export function TextAreaButton(props){
     </button>
   );
 }
+
+
+export function ModalButton(props){
+  return (
+    <button className="modal-button" onClick={props.onClick}>
+      <i>{props.name}</i>
+    </button>
+  );
+}
