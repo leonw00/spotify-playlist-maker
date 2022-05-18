@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import { RunButton, TextAreaButton } from "../../components/Buttons/Button";
 import TrackList from "../../components/TrackList/TrackList";
-import { searchTrack } from "../../logic/Logic";
+import { createEmptyPlaylist, searchTrack } from "../../logic/Logic";
 import { getRandomText } from "../../logic/Others";
 import Header from "../Header/Header";
 import "./MainPage.css";
@@ -107,6 +107,7 @@ function MainPage() {
           close={() => {
             setModal();
           }}
+          function={createEmptyPlaylist}
         />
       );
     } else {

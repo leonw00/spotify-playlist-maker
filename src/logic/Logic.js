@@ -1,4 +1,5 @@
 import axios from "axios";
+import { getToken } from "./Auth";
 
 export async function searchTrack(e) {
   let arr = [];
@@ -39,24 +40,46 @@ export async function searchTrack(e) {
   };
 }
 
-// export async function createEmptyPlaylist(userId, name, token) {
-//   // request data object
-//   const content = {
-//     name: name,
-//   };
+async function getUserId() {
+  let token = getToken();
 
-//   // set the headers
-//   const config = {
-//     headers: {
-//       "Content-Type": "application/json",
-//       Authorization: `Bearer ${token}`,
-//     },
-//   };
+  let userId = "";
 
-//   // create the playlist
-//   const { data } = await axios.post(
-//     `https://api.spotify.com/v1/users/${userId}/playlists`,
-//     JSON.stringify(content),
-//     config
-//   );
-// }
+  // get the user to get the id
+  const user = await axios.get("https://api.spotify.com/v1/me", {
+    headers: {
+      Authorization: `Bearer ${token}`,
+    },
+  });
+
+  userId = user.data.id;
+
+  return userId;
+}
+
+export async function createEmptyPlaylist(name) {
+  let token = getToken();
+  let userId = await getUserId();
+
+  // request data object
+  const content = {
+    name: name,
+  };
+
+  // set the headers
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  // create the playlist
+  const { data } = await axios.post(
+    `https://api.spotify.com/v1/users/${userId}/playlists`,
+    JSON.stringify(content),
+    config
+  );
+
+  console.log(data);
+}
