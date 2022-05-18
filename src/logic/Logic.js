@@ -81,5 +81,35 @@ export async function createEmptyPlaylist(name) {
     config
   );
 
-  console.log(data);
+  return data.id;
 }
+
+
+
+export async function addItemToPlaylist(playlistId, uri, position) {
+  let token = getToken();
+
+  // request data object
+  const content = {
+    uri: uri,
+    position: position,
+  };
+
+  // set the headers
+  const config = {
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${token}`,
+    },
+  };
+
+  // create the playlist
+  const { data } = await axios.post(
+    `https://api.spotify.com/v1/playlists/${playlistId}/tracks`,
+    JSON.stringify(content),
+    config
+  );
+
+  return data.id;
+}
+

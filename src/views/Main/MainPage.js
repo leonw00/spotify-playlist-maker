@@ -107,13 +107,20 @@ function MainPage() {
           close={() => {
             setModal();
           }}
-          function={createEmptyPlaylist}
+          function={(playlistName) => fillPlaylist(playlistName)}
         />
       );
     } else {
       setModal();
     }
   };
+
+  const fillPlaylist = (playlistName) =>{
+    // create empty playlist
+    let playlistId = createEmptyPlaylist(playlistName);
+
+    // fill playlist with tracks
+  }
 
   return (
     <div className="main-page">
