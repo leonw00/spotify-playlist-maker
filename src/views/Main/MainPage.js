@@ -159,6 +159,7 @@ function MainPage() {
       </div>
 
       <NameModal />
+      
     </div>
   );
 }
