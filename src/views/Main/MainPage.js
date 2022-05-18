@@ -19,6 +19,7 @@ function MainPage() {
   const [finish, setFinish] = useState(false);
   const [wordCount, setWordCount] = useState(0);
   const [auth, setAuth] = useState("");
+  const [modal, setModal] = useState();
 
   useEffect(() => {
     // check logged in
@@ -99,10 +100,18 @@ function MainPage() {
     setProgress(0);
   };
 
+  const showModal = () => {
+    if (modal == null) {
+      setModal(<NameModal close={()=>{setModal();}}/>);
+    }
+    else{
+      setModal();
+    }
+  };
+
   return (
     <div className="main-page">
       <Header />
-
       <div className="main-body">
         <div className="input-block">
           {!target ? showTextButtons() : ""}
@@ -149,7 +158,7 @@ function MainPage() {
           {finish ? (
             <div className="sidebar">
               <i class="fa fa-solid fa-share"></i>
-              <i class="fa fa-solid fa-save"></i>
+              <i class="fa fa-solid fa-save" onClick={showModal}></i>
               <i class="fa fa-solid fa-trash" onClick={resetTracklist}></i>
             </div>
           ) : (
@@ -157,9 +166,7 @@ function MainPage() {
           )}
         </div>
       </div>
-
-      <NameModal />
-      
+      {modal};
     </div>
   );
 }

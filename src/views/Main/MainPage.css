@@ -8,7 +8,7 @@
 
 .main-body {
   height: 100%;
-  margin: 50px 120px;
+  margin: 25px 120px;
   display: flex;
   flex-direction: row;
 }
