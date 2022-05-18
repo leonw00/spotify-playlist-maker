@@ -102,9 +102,14 @@ function MainPage() {
 
   const showModal = () => {
     if (modal == null) {
-      setModal(<NameModal close={()=>{setModal();}}/>);
-    }
-    else{
+      setModal(
+        <NameModal
+          close={() => {
+            setModal();
+          }}
+        />
+      );
+    } else {
       setModal();
     }
   };
