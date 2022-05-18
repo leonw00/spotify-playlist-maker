@@ -2,7 +2,7 @@ import "./TrackNode.css";
 
 export function TrackNode(props) {
   return (
-    <div className="track-node-block">
+    <div className="track-node-block" key={props.id}>
       <div className="node-image-block">
           {props.image ? <img src={props.image} alt="/" /> : <div className="image-placeholder"/>}
       </div>
@@ -15,7 +15,6 @@ export function TrackNode(props) {
 }
 
 export function PlaceholderNode(){
-  console.log("TETTET");
   return (
     <div className="track-node-block">
       <div className="node-image-block">

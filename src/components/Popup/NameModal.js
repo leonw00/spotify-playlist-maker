@@ -13,7 +13,7 @@ function NameModal(props) {
           <h1>What is the playlist name?</h1>
           <input type="text" value={content} onChange={(e)=>setContent(e.target.value)}/>
           <ModalButton onClick={() => props.function(content)} name="Continue" />
-          <i class="cross-logo fa fa-solid fa-close" onClick={props.close}></i>
+          <i className="cross-logo fa fa-solid fa-close" onClick={props.close}></i>
         </div>
       </div>
     </div>
