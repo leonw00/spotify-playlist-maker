@@ -163,9 +163,9 @@ function MainPage() {
 
           {finish ? (
             <div className="sidebar">
-              <i class="fa fa-solid fa-share"></i>
-              <i class="fa fa-solid fa-save" onClick={showModal}></i>
-              <i class="fa fa-solid fa-trash" onClick={resetTracklist}></i>
+              <i className="fa fa-solid fa-share"></i>
+              <i className="fa fa-solid fa-save" onClick={showModal}></i>
+              <i className="fa fa-solid fa-trash" onClick={resetTracklist}></i>
             </div>
           ) : (
             <div className="sidebar"></div>
