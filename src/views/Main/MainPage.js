@@ -10,6 +10,7 @@ import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { authenticate, getToken, storeToken } from "../../logic/Auth";
 import NameModal from "../../components/Popup/NameModal";
+import bmc from "../../assets/bmc.png";
 
 function MainPage() {
   const [target, setTarget] = useState("");
@@ -178,8 +179,14 @@ function MainPage() {
             <div className="sidebar"></div>
           )}
         </div>
+
+
+        <a href="https://www.buymeacoffee.com/leow" className="bmc-logo">
+          <img className="bmc-image" src={bmc} alt="arrow" />
+        </a>
+
       </div>
-      {modal};
+      {modal}
     </div>
   );
 }

@@ -67,3 +67,18 @@
 .cross-logo:hover {
   color: rgb(195, 128, 4);
 }
+
+@media screen and (max-width: 670px) {
+  .name-container-modal {
+    top: 250px;
+    width: 280px;
+    height: 270px;
+    padding: 0px 35px;
+  }
+
+  .modal-content > h1 {
+    font-size: 1.4rem;
+    margin-top: 60px;
+    margin-bottom: 30px;
+  }
+}

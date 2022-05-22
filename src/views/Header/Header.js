@@ -25,7 +25,7 @@ function Header() {
 
       <div className="header-list">
         <div className="header-list-content">
-          <a href="https://www.buymeacoffee.com/leow">
+          <a href="https://www.buymeacoffee.com/leow" className="bmc-logo">
             <img className="bmc-image" src={bmc} alt="arrow" />
           </a>
         </div>
