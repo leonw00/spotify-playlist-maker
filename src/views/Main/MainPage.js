@@ -1,7 +1,11 @@
 import { useEffect, useState } from "react";
 import { RunButton, TextAreaButton } from "../../components/Buttons/Button";
 import TrackList from "../../components/TrackList/TrackList";
-import { createEmptyPlaylist, searchTrack } from "../../logic/Logic";
+import {
+  addItemToPlaylist,
+  createEmptyPlaylist,
+  searchTrack,
+} from "../../logic/Logic";
 import { getRandomText } from "../../logic/Others";
 import Header from "../Header/Header";
 import "./MainPage.css";
@@ -116,12 +120,15 @@ function MainPage() {
     }
   };
 
-  const fillPlaylist = (playlistName) =>{
+  const fillPlaylist = async (playlistName) => {
     // create empty playlist
-    let playlistId = createEmptyPlaylist(playlistName);
+    let playlistId = await createEmptyPlaylist(playlistName);
 
-    // fill playlist with tracks
-  }
+    //fill playlist with tracks
+    for (let i = 0; i < tracks.length; i++) {
+      await addItemToPlaylist(playlistId, tracks[i].uri, i);
+    }
+  };
 
   return (
     <div className="main-page">
@@ -180,11 +187,9 @@ function MainPage() {
           )}
         </div>
 
-
         <a href="https://www.buymeacoffee.com/leow" className="bmc-logo">
           <img className="bmc-image" src={bmc} alt="arrow" />
         </a>
-
       </div>
       {modal}
     </div>

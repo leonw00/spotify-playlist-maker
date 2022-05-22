@@ -37,6 +37,7 @@ export async function searchTrack(e) {
     image: localTrack.album.images[0].url,
     title: localTrack.name,
     artists: artists,
+    uri: localTrack.uri,
   };
 }
 
@@ -84,15 +85,13 @@ export async function createEmptyPlaylist(name) {
   return data.id;
 }
 
-
-
 export async function addItemToPlaylist(playlistId, uri, position) {
   let token = getToken();
 
   // request data object
   const content = {
-    uri: uri,
     position: position,
+    uris: uri,
   };
 
   // set the headers
@@ -112,4 +111,3 @@ export async function addItemToPlaylist(playlistId, uri, position) {
 
   return data.id;
 }
-
