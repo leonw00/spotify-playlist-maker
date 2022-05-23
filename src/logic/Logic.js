@@ -91,7 +91,7 @@ export async function addItemToPlaylist(playlistId, uri, position) {
   // request data object
   const content = {
     position: position,
-    uris: uri,
+    uris: [uri],
   };
 
   // set the headers
