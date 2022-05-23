@@ -66,6 +66,13 @@ function MainPage() {
     let trackList = [];
     let progressPercentage = 0;
 
+    // check if the screen is phone size
+    const { innerWidth, innerHeight } = window;
+    if (innerWidth <= 630) {
+      const targetElement = document.getElementById("target-element");
+      targetElement.scrollIntoView({ behavior: "smooth" });
+    }
+
     // reset the tracklist
     setTracks([]);
 
@@ -156,7 +163,7 @@ function MainPage() {
           <img className="arrow-image" src={ArrowImage} alt="arrow" />
         </div>
 
-        <div className="display-block">
+        <div className="display-block" id="target-element">
           <div className="display-playlist">
             <TrackList tracks={tracks} />
             {toggleProgress ? (
