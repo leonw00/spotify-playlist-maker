@@ -15,7 +15,7 @@ import "react-circular-progressbar/dist/styles.css";
 import { authenticate, getToken, storeToken } from "../../logic/Auth";
 import bmc from "../../assets/bmc.png";
 import SavePopup from "../../components/Popup/SavePopup";
-import SharePopup from "../../components/Popup/SavePopup";
+import SharePopup from "../../components/Popup/SharePopup";
 
 function MainPage() {
   const [target, setTarget] = useState("");
