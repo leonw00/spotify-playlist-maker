@@ -13,8 +13,9 @@ import ArrowImage from "../../assets/right-arrow.png";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { authenticate, getToken, storeToken } from "../../logic/Auth";
-import NameModal from "../../components/Popup/PopupContent/NameModal";
 import bmc from "../../assets/bmc.png";
+import SavePopup from "../../components/Popup/SavePopup";
+import SharePopup from "../../components/Popup/SavePopup";
 
 function MainPage() {
   const [target, setTarget] = useState("");
@@ -112,10 +113,25 @@ function MainPage() {
     setProgress(0);
   };
 
-  const showModal = () => {
+  const showSavePopup = () => {
     if (modal == null) {
       setModal(
-        <NameModal
+        <SavePopup
+          close={() => {
+            setModal();
+          }}
+          function={(playlistName) => fillPlaylist(playlistName)}
+        />
+      );
+    } else {
+      setModal();
+    }
+  };
+
+  const showSharePopup = () => {
+    if (modal == null) {
+      setModal(
+        <SharePopup
           close={() => {
             setModal();
           }}
@@ -185,8 +201,8 @@ function MainPage() {
 
           {finish ? (
             <div className="sidebar">
-              <i className="fa fa-solid fa-share"></i>
-              <i className="fa fa-solid fa-save" onClick={showModal}></i>
+              <i className="fa fa-solid fa-share" onClick={showSharePopup}></i>
+              <i className="fa fa-solid fa-save" onClick={showSavePopup}></i>
               <i className="fa fa-solid fa-trash" onClick={resetTracklist}></i>
             </div>
           ) : (

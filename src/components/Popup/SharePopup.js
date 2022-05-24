@@ -1,7 +1,7 @@
 import ModalBackdrop from "./PopupContent/ModalBackdrop";
 import NameModal from "./PopupContent/NameModal";
 
-function SavePopup(props) {
+function SharePopup(props) {
   return (
     <ModalBackdrop close={props.close}>
       <NameModal funciton={props.function} close={props.close} />
@@ -9,4 +9,4 @@ function SavePopup(props) {
   );
 }
 
-export default SavePopup;
+export default SharePopup;
