@@ -13,7 +13,7 @@ import ArrowImage from "../../assets/right-arrow.png";
 import { CircularProgressbar, buildStyles } from "react-circular-progressbar";
 import "react-circular-progressbar/dist/styles.css";
 import { authenticate, getToken, storeToken } from "../../logic/Auth";
-import NameModal from "../../components/Popup/NameModal";
+import NameModal from "../../components/Popup/PopupContent/NameModal";
 import bmc from "../../assets/bmc.png";
 
 function MainPage() {
