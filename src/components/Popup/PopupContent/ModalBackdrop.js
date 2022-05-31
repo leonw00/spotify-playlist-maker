@@ -1,4 +1,3 @@
-import { useState } from "react";
 import "./ModalBackdrop.css";
 
 function ModalBackdrop(props) {
