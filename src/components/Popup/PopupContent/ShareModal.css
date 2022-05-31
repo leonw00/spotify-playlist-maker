@@ -41,6 +41,7 @@
   display: flex;
   justify-content: center;
   border-right: 3px solid orange;
+  overflow: scroll;
 }
 
 .copy-button {
@@ -58,6 +59,12 @@
 .copy-button:hover {
   background-color: orange;
   color: rgb(21, 21, 21);
+}
+
+.copy-success-text{
+  color: orange;
+  font-size: 0.8rem;
+  margin-top: 20px;
 }
 
 .cross-logo {

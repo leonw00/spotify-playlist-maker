@@ -151,6 +151,8 @@ function MainPage() {
     for (let i = 0; i < tracks.length; i++) {
       await addItemToPlaylist(playlistId, tracks[i].uri, i);
     }
+
+    return playlistId;
   };
 
   return (
