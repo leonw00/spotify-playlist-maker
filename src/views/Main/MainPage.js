@@ -69,7 +69,7 @@ function MainPage() {
 
     // check if the screen is phone size
     const { innerWidth, innerHeight } = window;
-    if (innerWidth <= 630) {
+    if (innerWidth <= 630 && innerHeight > 0) {
       const targetElement = document.getElementById("target-element");
       targetElement.scrollIntoView({ behavior: "smooth" });
     }
